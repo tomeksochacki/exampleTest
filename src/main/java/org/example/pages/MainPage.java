@@ -21,6 +21,7 @@ public class MainPage extends PageObjectBase {
 
     WebElement firstProductFromList;
     Double numberOfProductsInBasket = 0.0;
+    Integer numberOfElements = 0;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -102,6 +103,24 @@ public class MainPage extends PageObjectBase {
             driver.quit();
         }
         return this;
+    }
+
+    public Integer getElementsCount() {
+        try {
+            driver.switchTo().frame(frame);
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[@id=\"portal-root-bottom\"]")));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+            WebElement container = driver.findElement(By.id("osAppInnerContainer"));
+            WebElement main = container.findElement(By.xpath("//main[@class=\"styles__StyledProductList-sc-6f8q5n-0 ExPtB\"]"));
+            WebElement grid = main.findElement(By.xpath("//div[@class=\"sc-kxCoLp fltSXB os-grid \"]"));
+            WebElement simpleTable = grid.findElement(By.cssSelector("div[class^=\"styles__StyledCards-sc-176tmlw-0\"]"));
+            List<WebElement> rows = simpleTable.findElements(By.cssSelector("div[data-qa^=\"LST_ProductCard\"]"));
+            numberOfElements = rows.size();
+        } catch (Exception e) {
+            System.out.println("Wystąpił błąd w metodzie: getElementsCount()");
+            driver.quit();
+        }
+        return numberOfElements;
     }
 
     public Double checkQuantityInBasket() {

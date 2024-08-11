@@ -59,7 +59,9 @@ public class AddingDeviceStepsDefinitions extends BaseStepDefs {
                 "Pamięć 16 GB\n" +
                 "Cena urządzenia płatna w 24 ratach 0%\n" +
                 "1999 zł", mainPage.getOneDeviceFromList());
+        Assertions.assertTrue(mainPage.getElementsCount().equals(18));
         log.info("Pokazanie listy urządzeń.");
+
     }
 
     @When("Klikam w pierwszy element z listy")
