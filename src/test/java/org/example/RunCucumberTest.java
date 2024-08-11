@@ -10,6 +10,7 @@ import org.junit.platform.suite.api.Suite;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
@@ -26,7 +27,7 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests {
     public RunCucumberTest() {
     }
 
-    @BeforeMethod
+    @BeforeClass
     public WebDriver getDriver() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-search-engine-choice-screen");

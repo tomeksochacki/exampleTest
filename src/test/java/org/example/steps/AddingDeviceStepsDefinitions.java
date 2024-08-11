@@ -9,8 +9,9 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.Test;
 
-
+@Test
 public class AddingDeviceStepsDefinitions extends BaseStepDefs {
 
     private static final Logger log = LoggerFactory.getLogger(AddingDeviceStepsDefinitions.class);
