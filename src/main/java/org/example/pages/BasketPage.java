@@ -31,7 +31,9 @@ public class BasketPage extends PageObjectBase {
             String mPrice = summaryMonthly.findElement(By.xpath("//span[contains(text(),'80')]")).getAttribute("innerText");
             monthlyPriceInBasket = Double.parseDouble(mPrice);
 
-            if (startPriceInBasket.equals(79.0) & monthlyPriceInBasket.equals(80.0)) {
+            if (startPriceInBasket.equals(ProductPage.startFee) & monthlyPriceInBasket.equals(ProductPage.monthlyFee)) {
+                System.out.println(ProductPage.startFee);
+                System.out.println(ProductPage.monthlyFee);
                 areEqual = true;
             }
         } catch (Exception e) {

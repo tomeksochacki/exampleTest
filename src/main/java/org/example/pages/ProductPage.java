@@ -13,8 +13,8 @@ public class ProductPage extends PageObjectBase {
     private WebElement frame;
 
     Boolean isRightPage = false;
-    Double startFee = 0.0;
-    Double monthlyFee = 0.0;
+    static Double startFee = 0.0;
+    static Double monthlyFee = 0.0;
 
     public ProductPage(WebDriver driver) {
         super(driver);

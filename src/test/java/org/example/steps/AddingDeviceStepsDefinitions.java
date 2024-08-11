@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 public class AddingDeviceStepsDefinitions extends BaseStepDefs {
 
     private static final Logger log = LoggerFactory.getLogger(AddingDeviceStepsDefinitions.class);
