@@ -32,8 +32,6 @@ public class BasketPage extends PageObjectBase {
             monthlyPriceInBasket = Double.parseDouble(mPrice);
 
             if (startPriceInBasket.equals(ProductPage.startFee) & monthlyPriceInBasket.equals(ProductPage.monthlyFee)) {
-                System.out.println(ProductPage.startFee);
-                System.out.println(ProductPage.monthlyFee);
                 areEqual = true;
             }
         } catch (Exception e) {
